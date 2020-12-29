@@ -13,5 +13,8 @@ sudo sh -c "iptables-save > /etc/iptables/rules.v4"
 #enable ipv4 forwading
 sudo sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
+#set the name type for vlans
+sudo vconfig set_name_type DEV_PLUS_VID_NO_PAD
+
 #install pihole
 curl -L https://install.pi-hole.net | sudo bash
